@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
-    base: process.env.NODE_ENV === 'production' ? '/my-profile/' : '/',
+    base: mode === 'production' || process.env.NODE_ENV === 'production' ? '/my-profile/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
