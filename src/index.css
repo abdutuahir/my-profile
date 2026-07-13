@@ -5,36 +5,183 @@
   --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-github-light-bg: #f6f8fa;
-  --color-github-light-card: #ffffff;
-  --color-github-light-border: #d0d7de;
-  --color-github-light-text: #1f2328;
-  --color-github-light-muted: #636c76;
-  --color-github-light-accent: #0969da;
-  --color-github-light-success: #1f883d;
+  --color-gh-bg: var(--gh-bg);
+  --color-gh-card: var(--gh-card);
+  --color-gh-border: var(--gh-border);
+  --color-gh-text: var(--gh-text);
+  --color-gh-muted: var(--gh-muted);
+  --color-gh-accent: var(--gh-accent);
+  --color-gh-success: var(--gh-success);
+  --color-gh-tag-bg: var(--gh-tag-bg);
+  --color-gh-tab-active-border: var(--gh-tab-active-border);
+  --color-gh-alert-bg: var(--gh-alert-bg);
+  --color-gh-alert-text: var(--gh-alert-text);
+  --color-gh-alert-border: var(--gh-alert-border);
+  --color-gh-accent-light-bg: var(--gh-accent-light-bg);
+  --color-gh-accent-light-border: var(--gh-accent-light-border);
+  --color-gh-card-hover: var(--gh-card-hover);
+  --color-gh-card-selected: var(--gh-card-selected);
 }
 
-/* Custom scrollbar styling for a native light-mode documentation feel */
+:root {
+  --gh-bg: #f6f8fa;
+  --gh-card: #ffffff;
+  --gh-border: #d0d7de;
+  --gh-text: #1f2328;
+  --gh-muted: #57606a;
+  --gh-accent: #0969da;
+  --gh-success: #1f883d;
+  --gh-tag-bg: #eff1f3;
+  --gh-tab-active-border: #fd8c73;
+  --gh-alert-bg: #dafbe1;
+  --gh-alert-text: #1a7f37;
+  --gh-alert-border: rgba(133, 232, 157, 0.6);
+  --gh-accent-light-bg: #ddf4ff;
+  --gh-accent-light-border: rgba(84, 174, 255, 0.3);
+  --gh-card-hover: #f6f8fa;
+  --gh-card-selected: #fff8f2;
+}
+
+.dark {
+  --gh-bg: #0b0e14;
+  --gh-card: #151b23;
+  --gh-border: #30363d;
+  --gh-text: #f0f6fc;
+  --gh-muted: #8b949e;
+  --gh-accent: #4493f8;
+  --gh-success: #3fb950;
+  --gh-tag-bg: #21262d;
+  --gh-tab-active-border: #f78166;
+  --gh-alert-bg: rgba(63, 185, 80, 0.1);
+  --gh-alert-text: #3fb950;
+  --gh-alert-border: rgba(63, 185, 80, 0.4);
+  --gh-accent-light-bg: rgba(56, 139, 253, 0.15);
+  --gh-accent-light-border: rgba(56, 139, 253, 0.4);
+  --gh-card-hover: #1f2630;
+  --gh-card-selected: rgba(247, 129, 102, 0.08);
+}
+
+/* Custom scrollbar styling for a native light/dark mode feel */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f6f8fa;
+  background: var(--gh-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d0d7de;
+  background: var(--gh-border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #afb8c1;
+  background: var(--gh-muted);
 }
 
 body {
-  background-color: #f6f8fa;
-  color: #1f2328;
+  background-color: var(--gh-bg);
+  color: var(--gh-text);
   font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Print Media Query for clean, professional PDF exports */
+@media print {
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  
+  /* Hide non-essential layout items for resume PDF export */
+  header, 
+  footer, 
+  nav, 
+  button, 
+  .no-print, 
+  [role="tablist"], 
+  #terminal-tab, 
+  #architecture-tab, 
+  .theme-toggle,
+  svg,
+  #radar-chart-container,
+  #skills-progress-list > div:first-child p,
+  a[href^="https://github.com"],
+  a[href^="https://www.linkedin.com"] {
+    display: none !important;
+  }
+  
+  /* Reset spacing/widths for paper size */
+  main, 
+  .max-w-7xl, 
+  #overview-grid,
+  #readme-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  
+  /* Force columns to print cleanly */
+  #profile-column {
+    width: 100% !important;
+    margin-bottom: 25px !important;
+    page-break-inside: avoid;
+  }
+  
+  #readme-column {
+    width: 100% !important;
+    page-break-inside: auto;
+  }
+  
+  .bg-white, 
+  .bg-gh-card, 
+  .bg-gh-bg {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+  
+  .border, 
+  .border-gh-border {
+    border-color: #d0d7de !important;
+  }
+  
+  /* Ensure all content fits on the printed page */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    color: #000000 !important;
+  }
+  
+  p, li, span {
+    color: #333333 !important;
+  }
+  
+  /* Force chronological career timeline cards to expand and display */
+  .timeline-card {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d7de !important;
+    padding: 12px !important;
+    margin-bottom: 15px !important;
+    page-break-inside: avoid !important;
+  }
+  
+  /* Force responsibilities lists to be fully visible in print */
+  .timeline-details {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+  
+  /* Avoid splitting items across pages */
+  .page-break-avoid, 
+  .experience-item, 
+  #sre-skills-section, 
+  #projects-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
 }

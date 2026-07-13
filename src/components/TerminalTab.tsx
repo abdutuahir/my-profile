@@ -6,7 +6,6 @@ import {
   RefreshCw, 
   ShieldAlert, 
   Activity, 
-  CheckCircle,
   HelpCircle
 } from "lucide-react";
 import { experienceData } from "../data/experienceData";
@@ -200,38 +199,38 @@ export default function TerminalTab() {
   return (
     <div className="py-6 space-y-6" id="sre-terminal-container">
       {/* Intro details */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#d0d7de] pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gh-border pb-4">
         <div>
-          <h2 className="text-xl font-bold text-[#1f2328] flex items-center gap-2">
-            <Terminal className="w-5 h-5 text-amber-600" /> SRE Operational Sandbox
+          <h2 className="text-xl font-bold text-gh-text flex items-center gap-2 font-sans">
+            <Terminal className="w-5 h-5 text-amber-600 animate-pulse" /> SRE Operational Sandbox
           </h2>
-          <p className="text-xs text-[#57606a] mt-1">
+          <p className="text-xs text-gh-muted mt-1">
             Interact directly with simulated environments representing Abdu's day-to-day operations in SRE deployment pipelines and security assessments.
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1.5 text-xs font-mono bg-white border border-[#d0d7de] px-3 py-1 rounded text-[#57606a] shadow-sm">
-            <Cpu className="w-3.5 h-3.5 text-[#1f883d]" />
+          <span className="flex items-center gap-1.5 text-xs font-mono bg-gh-card border border-gh-border px-3 py-1 rounded text-gh-muted shadow-sm">
+            <Cpu className="w-3.5 h-3.5 text-gh-success" />
             Vitals: OK
           </span>
-          <span className="flex items-center gap-1.5 text-xs font-mono bg-white border border-[#d0d7de] px-3 py-1 rounded text-[#57606a] shadow-sm">
-            <Activity className="w-3.5 h-3.5 text-[#0969da]" />
+          <span className="flex items-center gap-1.5 text-xs font-mono bg-gh-card border border-gh-border px-3 py-1 rounded text-gh-muted shadow-sm">
+            <Activity className="w-3.5 h-3.5 text-gh-accent" />
             TPS: 1450/s
           </span>
         </div>
       </div>
 
       {/* Terminal UI */}
-      <div className="bg-[#1f2328] border border-[#d0d7de] rounded-lg overflow-hidden shadow-md font-mono text-sm">
+      <div className="bg-[#1f2328] border border-gh-border rounded-lg overflow-hidden shadow-md font-mono text-sm">
         {/* Terminal Header */}
-        <div className="bg-[#f6f8fa] px-4 py-2.5 flex items-center justify-between border-b border-[#d0d7de] select-none">
+        <div className="bg-gh-bg px-4 py-2.5 flex items-center justify-between border-b border-gh-border select-none transition-colors duration-200">
           <div className="flex items-center space-x-2">
             <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
             <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
             <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            <span className="text-xs text-[#57606a] pl-2 font-medium">sre-admin-terminal - bash - 80×24</span>
+            <span className="text-xs text-gh-muted pl-2 font-medium">sre-admin-terminal - bash - 80×24</span>
           </div>
-          <span className="text-[11px] text-[#57606a] font-bold">UTC</span>
+          <span className="text-[11px] text-gh-muted font-bold">UTC</span>
         </div>
 
         {/* Terminal Body */}
@@ -260,7 +259,7 @@ export default function TerminalTab() {
         </div>
 
         {/* Terminal Input Bar */}
-        <div className="border-t border-[#d0d7de] bg-[#24292f] p-3 flex items-center space-x-2.5">
+        <div className="border-t border-gh-border bg-[#24292f] p-3 flex items-center space-x-2.5">
           <span className="text-sky-300 font-bold select-none font-mono">sre-shell:~$</span>
           <input
             type="text"
@@ -277,43 +276,43 @@ export default function TerminalTab() {
       </div>
 
       {/* CLI Quick Shortcuts Box */}
-      <div className="bg-white border border-[#d0d7de] rounded-lg p-4 space-y-3 shadow-sm">
-        <h4 className="text-xs font-mono font-bold text-[#57606a] uppercase tracking-wider flex items-center gap-1.5">
-          <HelpCircle className="w-3.5 h-3.5 text-[#0969da]" />
+      <div className="bg-gh-card border border-gh-border rounded-lg p-4 space-y-3 shadow-sm no-print">
+        <h4 className="text-xs font-mono font-bold text-gh-muted uppercase tracking-wider flex items-center gap-1.5">
+          <HelpCircle className="w-3.5 h-3.5 text-gh-accent" />
           Terminal Command Shortcuts
         </h4>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => runCommand("about")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-white border border-[#d0d7de] rounded text-xs font-mono text-[#1f2328] hover:bg-[#f6f8fa] hover:border-[#afb8c1] hover:text-[#0969da] disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm"
+            className="px-3 py-1.5 bg-gh-card border border-gh-border rounded text-xs font-mono text-gh-text hover:bg-gh-card-hover hover:border-gh-muted hover:text-gh-accent disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm cursor-pointer"
             id="shortcut-about"
           >
-            <Play className="w-3 h-3 text-[#1f883d]" />
+            <Play className="w-3 h-3 text-gh-success" />
             execute: about
           </button>
           <button
             onClick={() => runCommand("experience")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-white border border-[#d0d7de] rounded text-xs font-mono text-[#1f2328] hover:bg-[#f6f8fa] hover:border-[#afb8c1] hover:text-[#0969da] disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm"
+            className="px-3 py-1.5 bg-gh-card border border-gh-border rounded text-xs font-mono text-gh-text hover:bg-gh-card-hover hover:border-gh-muted hover:text-gh-accent disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm cursor-pointer"
             id="shortcut-experience"
           >
-            <Play className="w-3 h-3 text-[#1f883d]" />
+            <Play className="w-3 h-3 text-gh-success" />
             execute: experience
           </button>
           <button
             onClick={() => runCommand("skills")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-white border border-[#d0d7de] rounded text-xs font-mono text-[#1f2328] hover:bg-[#f6f8fa] hover:border-[#afb8c1] hover:text-[#0969da] disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm"
+            className="px-3 py-1.5 bg-gh-card border border-gh-border rounded text-xs font-mono text-gh-text hover:bg-gh-card-hover hover:border-gh-muted hover:text-gh-accent disabled:opacity-40 transition flex items-center gap-1.5 shadow-sm cursor-pointer"
             id="shortcut-skills"
           >
-            <Play className="w-3 h-3 text-[#1f883d]" />
+            <Play className="w-3 h-3 text-gh-success" />
             execute: skills
           </button>
           <button
             onClick={() => runCommand("logs")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-[#fff8f2] border border-[#fd8c73]/30 rounded text-xs font-mono text-amber-700 hover:bg-[#fff1e5] disabled:opacity-40 transition flex items-center gap-1.5"
+            className="px-3 py-1.5 bg-[#fff8f2] border border-[#fd8c73]/30 rounded text-xs font-mono text-amber-700 hover:bg-[#fff1e5] disabled:opacity-40 transition flex items-center gap-1.5 cursor-pointer"
             id="shortcut-logs"
           >
             <Activity className="w-3 h-3 text-amber-600" />
@@ -322,7 +321,7 @@ export default function TerminalTab() {
           <button
             onClick={() => runCommand("audit")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-[#ffebe9] border border-[#ffc4c0]/30 rounded text-xs font-mono text-red-700 hover:bg-[#ffe3e0] disabled:opacity-40 transition flex items-center gap-1.5"
+            className="px-3 py-1.5 bg-[#ffebe9] border border-[#ffc4c0]/30 rounded text-xs font-mono text-red-700 hover:bg-[#ffe3e0] disabled:opacity-40 transition flex items-center gap-1.5 cursor-pointer"
             id="shortcut-audit"
           >
             <ShieldAlert className="w-3 h-3 text-red-600" />
@@ -331,7 +330,7 @@ export default function TerminalTab() {
           <button
             onClick={() => runCommand("clear")}
             disabled={isStreaming}
-            className="px-3 py-1.5 bg-white border border-[#d0d7de] rounded text-xs font-mono text-[#57606a] hover:bg-[#f6f8fa] hover:text-[#1f2328] disabled:opacity-40 transition shadow-sm"
+            className="px-3 py-1.5 bg-gh-card border border-gh-border rounded text-xs font-mono text-gh-muted hover:bg-gh-card-hover hover:text-gh-text disabled:opacity-40 transition shadow-sm cursor-pointer"
             id="shortcut-clear"
           >
             clear buffer
