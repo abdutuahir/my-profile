@@ -19,7 +19,7 @@ interface LogMessage {
 export default function TerminalTab() {
   const [history, setHistory] = useState<LogMessage[]>([
     { text: "Initializing SRE Operational Shell...", type: "system" },
-    { text: "Establishing secure link to abdutahiredris profile nodes...", type: "system" },
+    { text: "Establishing secure link to abdutahir profile nodes...", type: "system" },
     { text: "SLA validation check: PASS (99.99%)", type: "success" },
     { text: "Secure tunnel verified. Type 'help' to see available commands or click the shortcut buttons below.", type: "warning" }
   ]);
@@ -62,7 +62,10 @@ export default function TerminalTab() {
                 "Profile: Site Reliability Specialist linking high-throughput core channels.\n" +
                 "Focus  : TIBCO BusinessWorks, Spring Boot Web Services, GitLab CI/CD, K8s.\n" +
                 "Trust  : Multi-year cyber defence developer & penetration auditor (INSA).\n" +
-                "Contact: abdutahiredris@gmail.com | Location: Addis Ababa, Ethiopia",
+                "Contact: abdutuahir@gmail.com | Phone: +251940751352 | +251703601494\n" +
+                "Socials: Telegram/Whatsapp: +251703601494 / +251940751352\n" +
+                "Github : @abdutahir | LinkedIn: https://www.linkedin.com/in/abdu-tahir/\n" +
+                "Location: Addis Ababa, Ethiopia",
           type: "success"
         });
         setHistory(newHistory);
@@ -134,7 +137,7 @@ export default function TerminalTab() {
       { text: "[eKYC-API] Sync check initiated. Handshake complete. Verification response: 200 OK", type: "success" },
       { text: "[MONITOR] Current TPS: 1450 | Memory Saturation: 44.2% | CPU Load: 12%", type: "system" },
       { text: "[ALERT] core_latency_ms (3250ms) exceeds SLA threshold threshold=2500ms for consecutive requests!", type: "warning" },
-      { text: "[ALERT] Triage triggered. SRE Alertmanager routing page to On-Call (abdutahiredris)", type: "warning" },
+      { text: "[ALERT] Triage triggered. SRE Alertmanager routing page to On-Call (abdutahir)", type: "warning" },
       { text: "[SRE-SCRIPT] SLA remediation script executing. Cycling container replicas in K8s pool...", type: "system" },
       { text: "[K8S-DOCKER] Redeploying pod instances of 'ussd-integration-v2-7b'...", type: "system" },
       { text: "[SRE-MONITOR] SLA validation test running...", type: "system" },

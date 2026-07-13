@@ -16,7 +16,12 @@ import {
   Database,
   Cpu,
   Bookmark,
-  Sparkles
+  Sparkles,
+  Phone,
+  Linkedin,
+  Github,
+  MessageSquare,
+  Send
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { experienceData, skillCategories } from "../data/experienceData";
@@ -26,7 +31,7 @@ export default function OverviewTab() {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("abdutahiredris@gmail.com");
+    navigator.clipboard.writeText("abdutuahir@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -49,7 +54,7 @@ export default function OverviewTab() {
             </div>
             <div>
               <h2 className="text-lg md:text-xl font-bold text-[#1f2328] tracking-tight">Abdu Tahir Edris</h2>
-              <p className="text-xs text-[#57606a] font-mono">@abdutahiredris</p>
+              <p className="text-xs text-[#57606a] font-mono">@abdutahir</p>
               <p className="text-xs text-[#0969da] font-medium mt-0.5">Enterprise Integration & SRE Lead</p>
             </div>
           </div>
@@ -65,7 +70,7 @@ export default function OverviewTab() {
             </div>
             <div className="flex items-center space-x-2.5 text-[#57606a] hover:text-[#0969da] transition cursor-pointer" onClick={handleCopyEmail}>
               <Mail className="w-4 h-4" />
-              <span className="truncate">{copiedEmail ? "Copied to Clipboard!" : "abdutahiredris@gmail.com"}</span>
+              <span className="truncate">{copiedEmail ? "Copied to Clipboard!" : "abdutuahir@gmail.com"}</span>
             </div>
             <div className="flex items-center space-x-2.5 text-[#57606a]">
               <Clock className="w-4 h-4" />
@@ -75,6 +80,36 @@ export default function OverviewTab() {
               <Award className="w-4 h-4" />
               <span>Safaricom | Hijra Bank | INSA</span>
             </div>
+            <div className="flex items-center space-x-2.5 text-[#57606a]">
+              <Phone className="w-4 h-4 text-[#57606a]" />
+              <span>+251940751352 | +251703601494</span>
+            </div>
+            <div className="flex items-center space-x-2.5 text-[#57606a]">
+              <MessageSquare className="w-4 h-4 text-[#57606a]" />
+              <span>Whatsapp: +251703601494</span>
+            </div>
+            <div className="flex items-center space-x-2.5 text-[#57606a]">
+              <Send className="w-4 h-4 text-[#57606a]" />
+              <span>Telegram: +251940751352 | +251703601494</span>
+            </div>
+            <a 
+              href="https://www.linkedin.com/in/abdu-tahir/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2.5 text-[#57606a] hover:text-[#0969da] transition"
+            >
+              <Linkedin className="w-4 h-4" />
+              <span>LinkedIn Profile</span>
+            </a>
+            <a 
+              href="https://github.com/abdutahir" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2.5 text-[#57606a] hover:text-[#0969da] transition"
+            >
+              <Github className="w-4 h-4" />
+              <span>@abdutahir</span>
+            </a>
           </div>
         </div>
 

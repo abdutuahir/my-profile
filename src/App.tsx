@@ -29,7 +29,7 @@ export default function App() {
       <footer className="bg-[#f6f8fa] border-t border-[#d0d7de] py-6 mt-12 text-xs text-[#57606a]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 font-mono">
           <div className="flex items-center space-x-2">
-            <span className="font-bold text-[#1f2328]">abdutahiredris</span>
+            <span className="font-bold text-[#1f2328]">abdutahir</span>
             <span>© 2026</span>
             <span>•</span>
             <span className="hover:text-[#0969da] cursor-pointer">SRE & Enterprise Integration Portal</span>
@@ -37,7 +37,7 @@ export default function App() {
           
           <div className="flex flex-wrap gap-4 items-center justify-center">
             <a 
-              href="mailto:abdutahiredris@gmail.com" 
+              href="mailto:abdutuahir@gmail.com" 
               className="hover:text-[#0969da] transition flex items-center gap-1"
             >
               Contact Support

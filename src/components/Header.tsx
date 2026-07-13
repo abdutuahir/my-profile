@@ -11,7 +11,11 @@ import {
   Github, 
   CircleDot, 
   CloudLightning,
-  AlertCircle
+  AlertCircle,
+  Clock,
+  Briefcase,
+  Shield,
+  Award
 } from "lucide-react";
 
 interface HeaderProps {
@@ -36,11 +40,11 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           <Github className="w-8 h-8 text-[#1f2328]" />
           <div className="flex items-center space-x-1 text-sm md:text-base">
             <span className="text-[#0969da] hover:underline cursor-pointer font-semibold">
-              abdutahiredris
+              abdutahir
             </span>
             <span className="text-[#636c76]">/</span>
             <span className="text-[#1f2328] font-bold hover:underline cursor-pointer">
-              enterprise-sre-hub
+              my-profile
             </span>
             <span className="ml-2 px-2.5 py-0.5 text-xs text-[#57606a] bg-white border border-[#d0d7de] rounded-full font-medium">
               Public
@@ -48,41 +52,41 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           </div>
         </div>
 
-        {/* Right stats & action buttons */}
-        <div className="flex items-center space-x-2 text-xs md:text-sm">
+        {/* Right stats & action badges */}
+        <div className="flex items-center flex-wrap gap-2 text-xs md:text-sm">
           {/* SRE Health status */}
-          <div className="hidden sm:flex items-center space-x-2 mr-3 px-3 py-1 bg-[#dafbe1] border border-[#85e89d]/60 rounded-full text-[#1a7f37]">
+          <div className="hidden lg:flex items-center space-x-2 mr-2 px-3 py-1 bg-[#dafbe1] border border-[#85e89d]/60 rounded-full text-[#1a7f37]">
             <CircleDot className="w-3.5 h-3.5 animate-pulse text-[#1f883d]" />
             <span className="font-mono text-[11px] font-bold">SLA: 99.99% (ONLINE)</span>
           </div>
 
           <div className="flex items-center bg-white border border-[#d0d7de] rounded-md overflow-hidden shadow-sm hover:bg-[#f6f8fa] transition">
-            <button className="flex items-center space-x-1.5 px-3 py-1.5 transition text-[#1f2328]">
-              <Eye className="w-3.5 h-3.5 text-[#57606a]" />
-              <span className="font-medium">Watch</span>
-            </button>
+            <div className="flex items-center space-x-1.5 px-3 py-1.5 text-[#1f2328]">
+              <Clock className="w-3.5 h-3.5 text-[#0969da]" />
+              <span className="font-medium text-xs">Experience</span>
+            </div>
             <span className="px-2.5 py-1.5 bg-[#f6f8fa] text-[#1f2328] border-l border-[#d0d7de] font-mono font-medium text-xs">
-              12
+              10+ Years
             </span>
           </div>
 
           <div className="flex items-center bg-white border border-[#d0d7de] rounded-md overflow-hidden shadow-sm hover:bg-[#f6f8fa] transition">
-            <button className="flex items-center space-x-1.5 px-3 py-1.5 transition text-[#1f2328]">
-              <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500/10" />
-              <span className="font-medium">Star</span>
-            </button>
+            <div className="flex items-center space-x-1.5 px-3 py-1.5 text-[#1f2328]">
+              <Briefcase className="w-3.5 h-3.5 text-[#1f883d]" />
+              <span className="font-medium text-xs">Lead Track</span>
+            </div>
             <span className="px-2.5 py-1.5 bg-[#f6f8fa] text-[#1f2328] border-l border-[#d0d7de] font-mono font-medium text-xs">
-              142
+              Safaricom
             </span>
           </div>
 
           <div className="flex items-center bg-white border border-[#d0d7de] rounded-md overflow-hidden shadow-sm hover:bg-[#f6f8fa] transition">
-            <button className="flex items-center space-x-1.5 px-3 py-1.5 transition text-[#1f2328]">
-              <GitFork className="w-3.5 h-3.5 text-[#57606a]" />
-              <span className="font-medium">Fork</span>
-            </button>
+            <div className="flex items-center space-x-1.5 px-3 py-1.5 text-[#1f2328]">
+              <Shield className="w-3.5 h-3.5 text-[#cf222e]" />
+              <span className="font-medium text-xs">Security</span>
+            </div>
             <span className="px-2.5 py-1.5 bg-[#f6f8fa] text-[#1f2328] border-l border-[#d0d7de] font-mono font-medium text-xs">
-              38
+              Gov / INSA
             </span>
           </div>
         </div>
