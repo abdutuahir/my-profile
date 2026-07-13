@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-github-light-bg: #f6f8fa;
+  --color-github-light-card: #ffffff;
+  --color-github-light-border: #d0d7de;
+  --color-github-light-text: #1f2328;
+  --color-github-light-muted: #636c76;
+  --color-github-light-accent: #0969da;
+  --color-github-light-success: #1f883d;
+}
+
+/* Custom scrollbar styling for a native light-mode documentation feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d0d7de;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afb8c1;
+}
+
+body {
+  background-color: #f6f8fa;
+  color: #1f2328;
+  font-family: var(--font-sans);
+}

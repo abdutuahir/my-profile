@@ -1,0 +1,6 @@
+{
+  "name": "SRE & Enterprise Integration Hub",
+  "description": "Interactive GitHub-style portfolio and documentation portal showcasing Enterprise Integration, SRE, and Cybersecurity engineering expertise.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
